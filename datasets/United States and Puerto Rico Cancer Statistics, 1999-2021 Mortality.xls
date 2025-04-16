@@ -1,0 +1,131 @@
+"Notes"	"Cancer Sites"	"Cancer Sites Code"	Deaths	Population	Age-Adjusted Rate	Age-Adjusted Rate Lower 95% Confidence Interval	Age-Adjusted Rate Upper 95% Confidence Interval	Age-Adjusted Rate Standard Error	Crude Rate
+	"All Cancer Sites Combined"	"0"	3005506	1648902192	148.4	148.2	148.6	0.1	182.3
+	"Oral Cavity and Pharynx"	"20010-20100"	53004	1648902192	2.6	2.5	2.6	0.0	3.2
+	"Lip"	"20010"	372	1648902192	0.0	0.0	0.0	0.0	0.0
+	"Tongue"	"20020"	13929	1648902192	0.7	0.7	0.7	0.0	0.8
+	"Salivary Gland"	"20030"	5234	1648902192	0.3	0.3	0.3	0.0	0.3
+	"Floor of Mouth"	"20040"	497	1648902192	0.0	0.0	0.0	0.0	0.0
+	"Gum and Other Mouth"	"20050"	7675	1648902192	0.4	0.4	0.4	0.0	0.5
+	"Nasopharynx"	"20060"	3460	1648902192	0.2	0.2	0.2	0.0	0.2
+	"Tonsil"	"20070"	5638	1648902192	0.3	0.3	0.3	0.0	0.3
+	"Oropharynx"	"20080"	6602	1648902192	0.3	0.3	0.3	0.0	0.4
+	"Hypopharynx"	"20090"	2200	1648902192	0.1	0.1	0.1	0.0	0.1
+	"Other Oral Cavity and Pharynx"	"20100"	7397	1648902192	0.4	0.3	0.4	0.0	0.4
+	"Digestive System"	"21010-21130"	814918	1648902192	40.0	39.9	40.1	0.0	49.4
+	"Esophagus"	"21010"	78117	1648902192	3.8	3.7	3.8	0.0	4.7
+	"Stomach"	"21020"	55419	1648902192	2.8	2.8	2.8	0.0	3.4
+	"Small Intestine"	"21030"	8706	1648902192	0.4	0.4	0.4	0.0	0.5
+	"Colon and Rectum"	"21041-21052"	261204	1648902192	13.1	13.0	13.1	0.0	15.8
+	"Colon excluding Rectum"	"21041-21049"	205412	1648902192	10.3	10.2	10.3	0.0	12.5
+	"Rectum and Rectosigmoid Junction"	"21051-21052"	55792	1648902192	2.8	2.8	2.8	0.0	3.4
+	"Anus, Anal Canal and Anorectum"	"21060"	6886	1648902192	0.3	0.3	0.3	0.0	0.4
+	"Liver and Intrahepatic Bile Duct"	"21071-21072"	139692	1648902192	6.6	6.6	6.7	0.0	8.5
+	"Liver"	"21071"	100872	1648902192	4.7	4.7	4.8	0.0	6.1
+	"Intrahepatic Bile Duct"	"21072"	38820	1648902192	1.9	1.9	1.9	0.0	2.4
+	"Gallbladder"	"21080"	10896	1648902192	0.5	0.5	0.5	0.0	0.7
+	"Other Biliary"	"21090"	9831	1648902192	0.5	0.5	0.5	0.0	0.6
+	"Pancreas"	"21100"	229490	1648902192	11.2	11.1	11.2	0.0	13.9
+	"Retroperitoneum"	"21110"	1769	1648902192	0.1	0.1	0.1	0.0	0.1
+	"Peritoneum, Omentum and Mesentery"	"21120"	4564	1648902192	0.2	0.2	0.2	0.0	0.3
+	"Other Digestive Organs"	"21130"	8344	1648902192	0.4	0.4	0.4	0.0	0.5
+	"Respiratory System"	"22010-22060"	721677	1648902192	35.0	34.9	35.1	0.0	43.8
+	"Nose, Nasal Cavity and Middle Ear"	"22010"	2788	1648902192	0.1	0.1	0.1	0.0	0.2
+	"Larynx"	"22020"	18989	1648902192	0.9	0.9	0.9	0.0	1.2
+	"Lung and Bronchus"	"22030"	698116	1648902192	33.8	33.8	33.9	0.0	42.3
+	"Pleura"	"22050"	256	1648902192	0.0	0.0	0.0	0.0	0.0
+	"Trachea, Mediastinum and Other Respiratory Organs"	"22060"	1528	1648902192	0.1	0.1	0.1	0.0	0.1
+	"Bones and Joints"	"23000"	9147	1648902192	0.5	0.5	0.5	0.0	0.6
+	"Soft Tissue including Heart"	"24000"	25069	1648902192	1.3	1.3	1.3	0.0	1.5
+	"Skin excluding Basal and Squamous"	"25010-25020"	61792	1648902192	3.1	3.1	3.1	0.0	3.7
+	"Melanoma of the Skin"	"25010"	40785	1648902192	2.1	2.0	2.1	0.0	2.5
+	"Other Non-Epithelial Skin"	"25020"	21007	1648902192	1.0	1.0	1.1	0.0	1.3
+	"Male and Female Breast"	"26000"	213779	1648902192	10.8	10.7	10.8	0.0	13.0
+	"Female Breast"	"26000-Female"	211328	831259246	19.6	19.5	19.7	0.0	25.4
+	"Male Breast"	"26000-Male"	2451	817642946	0.3	0.3	0.3	0.0	0.3
+	"Female Genital System"	"27010-27070"	161400	831259246	14.8	14.7	14.9	0.0	19.4
+	"Cervix Uteri"	"27010"	21135	831259246	2.2	2.2	2.3	0.0	2.5
+	"Corpus Uteri"	"27020"	33838	831259246	3.0	3.0	3.0	0.0	4.1
+	"Uterus, NOS"	"27030"	24153	831259246	2.2	2.1	2.2	0.0	2.9
+	"Ovary"	"27040"	68254	831259246	6.2	6.1	6.2	0.0	8.2
+	"Vagina"	"27050"	2098	831259246	0.2	0.2	0.2	0.0	0.3
+	"Vulva"	"27060"	6827	831259246	0.6	0.6	0.6	0.0	0.8
+	"Other Female Genital Organs"	"27070"	5095	831259246	0.5	0.4	0.5	0.0	0.6
+	"Male Genital System"	"28010-28040"	163203	817642946	19.7	19.6	19.8	0.0	20.0
+	"Prostate"	"28010"	158880	817642946	19.2	19.1	19.2	0.0	19.4
+	"Testis"	"28020"	2236	817642946	0.3	0.3	0.3	0.0	0.3
+	"Penis"	"28030"	1726	817642946	0.2	0.2	0.2	0.0	0.2
+	"Other Male Genital Organs"	"28040"	361	817642946	0.0	0.0	0.0	0.0	0.0
+	"Urinary System"	"29010-29040"	158976	1648902192	7.9	7.8	7.9	0.0	9.6
+	"Urinary Bladder"	"29010"	83616	1648902192	4.2	4.1	4.2	0.0	5.1
+	"Kidney and Renal Pelvis"	"29020"	70718	1648902192	3.5	3.5	3.5	0.0	4.3
+	"Ureter"	"29030"	2048	1648902192	0.1	0.1	0.1	0.0	0.1
+	"Other Urinary Organs"	"29040"	2594	1648902192	0.1	0.1	0.1	0.0	0.2
+	"Eye and Orbit"	"30000"	1922	1648902192	0.1	0.1	0.1	0.0	0.1
+	"Brain and Other Nervous System"	"31010-31040"	87053	1648902192	4.4	4.4	4.4	0.0	5.3
+	"Endocrine System"	"32010-32020"	15392	1648902192	0.8	0.8	0.8	0.0	0.9
+	"Thyroid"	"32010"	10068	1648902192	0.5	0.5	0.5	0.0	0.6
+	"Other Endocrine including Thymus"	"32020"	5324	1648902192	0.3	0.3	0.3	0.0	0.3
+	"Lymphomas"	"33011-33042"	106210	1648902192	5.4	5.3	5.4	0.0	6.4
+	"Hodgkin Lymphoma"	"33011-33012"	5004	1648902192	0.3	0.3	0.3	0.0	0.3
+	"Non-Hodgkin Lymphoma"	"33041-33042"	101206	1648902192	5.1	5.1	5.1	0.0	6.1
+	"Myeloma"	"34000"	61876	1648902192	3.1	3.0	3.1	0.0	3.8
+	"Leukemias"	"35011-35043"	117391	1648902192	6.0	6.0	6.0	0.0	7.1
+	"Acute Lymphocytic Leukemia"	"35011"	7446	1648902192	0.4	0.4	0.4	0.0	0.5
+	"Chronic Lymphocytic Leukemia"	"35012"	21593	1648902192	1.1	1.1	1.1	0.0	1.3
+	"Acute Myeloid Leukemia"	"35021"	53890	1648902192	2.7	2.7	2.8	0.0	3.3
+	"Chronic Myeloid Leukemia"	"35022"	5969	1648902192	0.3	0.3	0.3	0.0	0.4
+	"Other Leukemias"	"35041-35043"	28493	1648902192	1.5	1.4	1.5	0.0	1.7
+	"Other Lymphocytic Leukemia"	"35013"	2549	1648902192	0.1	0.1	0.1	0.0	0.2
+	"Acute Monocytic Leukemia"	"35031"	460	1648902192	0.0	0.0	0.0	0.0	0.0
+	"Other Acute Leukemia"	"35041"	6158	1648902192	0.3	0.3	0.3	0.0	0.4
+	"Aleukemic, Subleukemic and NOS"	"35043"	14205	1648902192	0.7	0.7	0.7	0.0	0.9
+	"Other Myeloid/Monocytic Leukemia"	"35023"	5121	1648902192	0.3	0.3	0.3	0.0	0.3
+	"Mesothelioma"	"36010"	12162	1648902192	0.6	0.6	0.6	0.0	0.7
+	"Miscellaneous"	"37000"	220535	1648902192	10.9	10.8	10.9	0.0	13.4
+"---"
+"Dataset: United States and Puerto Rico Cancer Statistics, 1999-2021 Mortality"
+"Query Parameters:"
+"Year: 2017; 2018; 2019; 2020; 2021"
+"Group By: Cancer Sites"
+"Show Totals: Disabled"
+"Show Zero Values: False"
+"Show Suppressed: False"
+"Calculate Rates Per: 100,000"
+"Standard Population: 2000 U.S. Std. Million"
+"---"
+"Help: See http://wonder.cdc.gov/wonder/help/cancermort-v2021.html for more information."
+"---"
+"Query Date: Mar 2, 2025 6:50:32 PM"
+"---"
+"Suggested Citation: United States Cancer Statistics - Mortality: 1999 - 2021, WONDER Online Database. United States Department"
+"of Health and Human Services, Centers for Disease Control and Prevention; 2024. Accessed at"
+"http://wonder.cdc.gov/cancermort-v2021.html on Mar 2, 2025 6:50:32 PM"
+"---"
+Caveats:
+"1. 'Not Applicable' is displayed for all data values when sex-specific cancers are combined with the wrong sex. More"
+"information: http://wonder.cdc.gov/wonder/help/cancermort-v2021.html#Genital Cancers List."
+"2. The ""Show Totals"" checkbox is disabled when data are grouped by Cancer Sites or by Childhood Cancer, because aggregate"
+"values are displayed in the table. Also be aware that charts and maps containing both aggregate and detail data could be"
+"misleading."
+"3. About rate comparisons: <ul><li> For consistency with the data on cancer incidence, the cancer sites in mortality data were"
+"grouped according to the revised SEER recodes dated March 1, 2018 (see SEER Cause of Death Recodes:"
+"http://seer.cancer.gov/codrecode/.). Because NCHS uses different groupings for some sites, the death rates in this report may"
+"differ slightly from those published by NCHS. In addition, under the ICD, there are differences in mortality and incidence"
+"coding. For example, there are several codes for mesothelioma in ICD-10 (depending on the primary site). However in ICD-O-3, one"
+"code captures all of the primary sites that mesothelioma affects. Note that Kaposi sarcoma deaths included in this dataset are"
+"only those deaths with underlying cause of death attributed to Kaposi Sarcoma, and do not include deaths where the condition was"
+"a contributing cause of death, or subsequent to another underlying condition. </li><li> The population used to age-adjust the"
+"rates in this report is the 2000 U.S. standard population, which is in accordance with a 1998 recommendation of the US."
+"Department of Health and Human Services. The 2000 U.S. standard population is based on the proportion of the 2000 population in"
+"specific age groups (younger than 1 year, 1-4 years, 5-9 years, 10-14 years, 15-19 years, . . . 85 years or older); the"
+"proportions of the 2000 population in these age groups serve as weights for calculating age-adjusted incidence and death rates."
+"NCHS, however, uses a different set of age groups in its age adjustment of death rates, and thus the cancer death rates in this"
+"report may differ slightly from those published by NCHS. </li><li> Deaths of persons of unknown age are not included in this"
+"data set. Death rates may differ slightly from other reports where deaths of persons of unknown age are included. </li></ul>"
+"4. Because the vast majority of Kaposi sarcoma (KS) cases have developed in association with human immunodeficiency virus (HIV)"
+"infection and acquired immunodeficiency syndrome (AIDS), HIV/AIDS is listed as the underlying cause of death. Therefore, KS"
+"death counts have been moved to the Miscellaneous category."
+"5. For the 2005 year, the Census Bureau estimates that 203,937 persons were displaced from Alabama, Louisiana, Mississippi and"
+"Texas due to Hurricanes Katrina and Rita. CDC WONDER does not include the displaced persons in the 2005 population counts for"
+"these states, nor are these counts included in the summary populations for the affected division, regions or national"
+"population. However, the USCS web site does include these displaced persons in the national population figures for 2005."

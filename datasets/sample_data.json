@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "value": -0.5653,
+    "group": "A"
+  },
+  {
+    "id": 2,
+    "value": -0.3473,
+    "group": "B"
+  },
+  {
+    "id": 3,
+    "value": -0.0314,
+    "group": "A"
+  },
+  {
+    "id": 4,
+    "value": -0.9694,
+    "group": "B"
+  },
+  {
+    "id": 5,
+    "value": 0.1868,
+    "group": "A"
+  },
+  {
+    "id": 6,
+    "value": 2.4878,
+    "group": "B"
+  },
+  {
+    "id": 7,
+    "value": -0.5001,
+    "group": "A"
+  },
+  {
+    "id": 8,
+    "value": 1.232,
+    "group": "B"
+  },
+  {
+    "id": 9,
+    "value": -2.2777,
+    "group": "A"
+  },
+  {
+    "id": 10,
+    "value": -0.954,
+    "group": "B"
+  }
+]
