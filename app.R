@@ -52,6 +52,11 @@ customCSS <- "
   .btn { background-color: #3498db; color: #fff; }
   .shiny-input-container { margin-bottom: 10px; }
   .tooltip-inner { max-width: 300px; text-align: left; }
+  .col-sm-4 { width: 35% !important; } /* Make sidebar wider */
+  .col-sm-8 { width: 65% !important; } /* Adjust main panel accordingly */
+  .shiny-input-container { width: 100% !important; } /* Make inputs use full width */
+  .selectize-input { max-width: none !important; } /* Allow selectize inputs to expand */
+  .form-group { margin-right: 0 !important; } /* Remove right margin from form groups */
 "
 
 ui <- navbarPage(
@@ -60,7 +65,7 @@ ui <- navbarPage(
   theme = shinytheme("flatly"),
   header = tags$head(
     tags$style(HTML(customCSS)),
-    useShinyjs(),  # Initialize shinyjs
+    useShinyjs(), # Initialize shinyjs
     # Google Analytics tracking code
     tags$script(HTML('
       <!-- Google tag (gtag.js) -->
@@ -419,70 +424,166 @@ server <- function(input, output, session) {
               title: "Generate a sample dataset with numeric and categorical variables to try out the app features.",
               placement: "right"
             });
-            
-            // Preprocessing tooltips
+
+            // Pre-processing Headers & Tabs
+            $("h4:contains(\'Data Cleaning Options\')").tooltip({
+              title: "First, decide whether to drop rows with NAs or duplicates before deeper processing.",
+              placement: "right"
+            });
+            $("h4:contains(\'Missing Value Imputation\')").tooltip({
+              title: "Tell Capytool how to fill blanks: choose None, or auto-fill with median (numbers) / mode (categories).",
+              placement: "right"
+            });
+            $("h4:contains(\'Outlier Handling\')").tooltip({
+              title: "Detect and optionally remove extreme numeric values that could skew analysis.",
+              placement: "right"
+            });
+            $("h4:contains(\'Data Type Conversion & Scaling\')").tooltip({
+              title: "Convert columns to the correct type and rescale numbers so models behave.",
+              placement: "right"
+            });
+            $("h4:contains(\'Categorical Encoding\')").tooltip({
+              title: "Translate text categories into numeric form for modeling (one-hot or label encoding).",
+              placement: "right"
+            });
+            $("h4:contains(\'Text Cleaning\')").tooltip({
+              title: "Trim spaces, lowercase text, and strip punctuation in string columns.",
+              placement: "right"
+            });
+            $("h4:contains(\'Dataset Preview\')").tooltip({
+              title: "Live preview of your dataset *after* the chosen cleaning steps are applied.",
+              placement: "right"
+            });
+            $("a:contains(\'Encoding Key\')").tooltip({
+              title: "Shows how each original categorical column was encoded into numeric columns.",
+              placement: "right"
+            });
+            $("a:contains(\'Outlier Visualization\')").tooltip({
+              title: "Visual summary of detected outliers using your chosen method (Z-score or IQR).",
+              placement: "right"
+            });
+
+            // Feature Engineering Tabs
+            $("a:contains(\'Engineered Data\')").tooltip({
+              title: "View and download the dataset *after* feature engineering is applied.",
+              placement: "right"
+            });
+            $("a:contains(\'Custom Transformation Plot\')").tooltip({
+              title: "See before-and-after distributions for your custom transformation expression.",
+              placement: "right"
+            });
+
+            // EDA Sidebar & Tabs
+            $("label[for=\'eda_columns\']").tooltip({
+              title: "Pick one or more columns to explore; charts will use only these.",
+              placement: "right"
+            });
+            $("label[for=\'plot_type\']").tooltip({
+              title: "Select the kind of chart you\'d like to create.",
+              placement: "right"
+            });
+            $("label[for=\'scatter_x\']").tooltip({
+              title: "Numeric variable for the X-axis (scatter or cluster plots).",
+              placement: "right"
+            });
+            $("label[for=\'scatter_y\']").tooltip({
+              title: "Numeric variable for the Y-axis (scatter or cluster plots).",
+              placement: "right"
+            });
+            $("#eda_plot").tooltip({
+              title: "Interactive plot appears here once you choose columns and a plot type.",
+              placement: "left"
+            });
+            $("a:contains(\'Descriptive Statistics\')").tooltip({
+              title: "Table of summary stats (mean, median, quartiles, etc.) for selected columns.",
+              placement: "right"
+            });
+
+            // Modeling Sidebar & Output
+            $("h4:contains(\'Data Splitting\')").tooltip({
+              title: "Decide how to divide data into training and test sets for fair evaluation.",
+              placement: "right"
+            });
+            $("label[for=\'train_ratio\']").tooltip({
+              title: "Drag to set the percentage of data used for training (rest goes to testing).",
+              placement: "right"
+            });
+            $("label[for=\'target_col\']").tooltip({
+              title: "Choose the outcome column you want the model to predict.",
+              placement: "right"
+            });
+            $("label[for=\'predictor_cols\']").tooltip({
+              title: "Select the features that feed into the model (or tick the checkbox to grab all).",
+              placement: "right"
+            });
+            $("h4:contains(\'Modeling Options\')").tooltip({
+              title: "Pick an algorithm; remember that categorical variables must be encoded first.",
+              placement: "right"
+            });
+            $("h4:contains(\'Training Data Preview\')").tooltip({
+              title: "Sample of the training set produced by your split—check columns & row count.",
+              placement: "right"
+            });
+
+            // The rest of your existing tooltips
             $("#remove_na").tooltip({
               title: "Check this to remove rows with any missing values.",
               placement: "right"
             });
-            $("#remove_duplicates").tooltip({
-              title: "Check this to remove duplicate rows from your dataset.",
+            // ...existing tooltips...
+
+            // New/Updated tooltips
+            $("h4:contains(\'EDA Options\')").tooltip({
+              title: "Choose what data to analyze and how to visualize it. Select columns and plot types here.",
               placement: "right"
             });
-            $("#impute_method").tooltip({
-              title: "Choose how to handle missing values: median for numeric columns, most frequent value for categorical.",
+
+            $("label[for=\'fe_method\']").tooltip({
+              title: "Choose how to create new features: Log transform for skewed data, Polynomial for non-linear patterns, Interaction terms for combined effects, etc.",
               placement: "right"
             });
-            $("#outlier_method").tooltip({
-              title: "Z-score detects outliers based on standard deviations from the mean. IQR uses the interquartile range method.",
+
+            $("label[for=\'target_col\']").tooltip({
+              title: "Select the variable you want your model to predict. This will be your dependent/outcome variable.",
               placement: "right"
             });
-            $("#scale_method").tooltip({
-              title: "Standardization centers data around 0 with SD=1. Normalization scales data between 0 and 1.",
+
+            $("label[for=\'predictor_cols\']").tooltip({
+              title: "Choose which variables to use as predictors/features in your model. These help predict your target variable.",
               placement: "right"
             });
-            $("#encode_method").tooltip({
-              title: "One-Hot Encoding creates binary columns for categories. Label Encoding converts categories to numbers.",
+
+            $("label[for=\'scatter_x\']").tooltip({
+              title: "Choose which variable to plot on the horizontal axis of your scatter plot or cluster plot.",
               placement: "right"
             });
-            
-            // Feature Engineering tooltips
-            $("#fe_method").tooltip({
-              title: "Choose a method to create new features: Log Transform for skewed data, Polynomial for non-linear relationships, Interaction for combined effects.",
+
+            $("label[for=\'scatter_y\']").tooltip({
+              title: "Choose which variable to plot on the vertical axis of your scatter plot or cluster plot.",
               placement: "right"
             });
-            $("#custom_expr").tooltip({
-              title: "Enter a mathematical expression using \'x\' as the variable, e.g., log(x+1) or x^2/10",
+
+            $("h4:contains(\'Lasso Points\')").tooltip({
+              title: "View and download the data points you\'ve selected by drawing a lasso on the scatter or cluster plot.",
               placement: "right"
             });
-            
-            // EDA tooltips
-            $("#plot_type").tooltip({
-              title: "Choose visualization type: Scatter for relationships, Histogram for distributions, PCA for dimensionality reduction, etc.",
+
+            $("#eda_plot").tooltip({
+              title: "Your interactive visualization appears here. You can zoom, pan, and select points depending on the plot type.",
+              placement: "left"
+            });
+
+            $("a:contains(\'Descriptive Statistics\')").tooltip({
+              title: "View summary statistics (mean, median, quartiles, etc.) for your selected columns in table format.",
               placement: "right"
             });
-            $("#select_all_eda").tooltip({
-              title: "Quickly select all columns for analysis. Uncheck to select specific columns.",
+
+            $("label[for=\'train_ratio\']").tooltip({
+              title: "Choose what percentage of your data to use for training. Higher values (e.g., 0.7) mean more training data but less testing data.",
               placement: "right"
             });
-            
-            // Modeling tooltips
-            $("#train_ratio").tooltip({
-              title: "Choose how much data to use for training. Higher ratio means more training data, but less testing data.",
-              placement: "right"
-            });
-            $("#model_type").tooltip({
-              title: "Linear/Logistic Regression for simple relationships, Random Forest/Gradient Boosting for complex patterns.",
-              placement: "right"
-            });
-            $("#target_col").tooltip({
-              title: "Select the variable you want to predict.",
-              placement: "right"
-            });
-            $("#select_all_predictors").tooltip({
-              title: "Automatically select all columns except the target as predictors.",
-              placement: "right"
-            });
+
+            // ...rest of existing tooltips...
           });
         '))
       }
