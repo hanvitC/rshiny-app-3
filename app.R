@@ -51,6 +51,7 @@ customCSS <- "
   .well { background-color: #ecf0f1; padding: 20px; }
   .btn { background-color: #3498db; color: #fff; }
   .shiny-input-container { margin-bottom: 10px; }
+  .tooltip-inner { max-width: 300px; text-align: left; }
 "
 
 ui <- navbarPage(
@@ -369,25 +370,29 @@ server <- function(input, output, session) {
   # Initialize session data
   session_data <- reactiveValues(
     id = UUIDgenerate(),
-    group = sample(c("A", "B"), 1),
+    group = sample(c("A", "B", "C"), 1),
     button_style = NULL
   )
 
   # Print group assignment to console
   observe({
-    message("User assigned to test group: ", session_data$group)
+    cat("\n\n**************************\n")
+    cat("User assigned to test group:", session_data$group, "\n")
+    cat("**************************\n\n")
   })
 
   # Set button styles based on group
   observe({
     if (session_data$group == "A") {
       session_data$button_style <- "background-color: #3498db; color: white;" # Original blue
-    } else {
+    } else if (session_data$group == "B") {
       session_data$button_style <- "background-color: #e74c3c; color: white; font-size: 18px; padding: 10px 20px;" # Enhanced red
+    } else {
+      session_data$button_style <- "background-color: #2ecc71; color: white;" # Green for group C
     }
   })
 
-  # Modify existing buttons with A/B styles
+  # Modify existing buttons with A/B/C styles and add tooltips
   output$styled_buttons <- renderUI({
     tagList(
       tags$style(HTML(sprintf(
@@ -401,6 +406,85 @@ server <- function(input, output, session) {
           #apply_fe::before { content: '⚡'; margin-right: 5px; }
           #run_model::before { content: '▶'; margin-right: 5px; }
         "))
+      },
+      if (session_data$group == "C") {
+        tags$script(HTML('
+          $(document).ready(function() {
+            // File handling tooltips
+            $("#files").tooltip({
+              title: "Upload your dataset in CSV, Excel, JSON, or RDS format. Multiple files are supported.",
+              placement: "right"
+            });
+            $("#generate_sample").tooltip({
+              title: "Generate a sample dataset with numeric and categorical variables to try out the app features.",
+              placement: "right"
+            });
+            
+            // Preprocessing tooltips
+            $("#remove_na").tooltip({
+              title: "Check this to remove rows with any missing values.",
+              placement: "right"
+            });
+            $("#remove_duplicates").tooltip({
+              title: "Check this to remove duplicate rows from your dataset.",
+              placement: "right"
+            });
+            $("#impute_method").tooltip({
+              title: "Choose how to handle missing values: median for numeric columns, most frequent value for categorical.",
+              placement: "right"
+            });
+            $("#outlier_method").tooltip({
+              title: "Z-score detects outliers based on standard deviations from the mean. IQR uses the interquartile range method.",
+              placement: "right"
+            });
+            $("#scale_method").tooltip({
+              title: "Standardization centers data around 0 with SD=1. Normalization scales data between 0 and 1.",
+              placement: "right"
+            });
+            $("#encode_method").tooltip({
+              title: "One-Hot Encoding creates binary columns for categories. Label Encoding converts categories to numbers.",
+              placement: "right"
+            });
+            
+            // Feature Engineering tooltips
+            $("#fe_method").tooltip({
+              title: "Choose a method to create new features: Log Transform for skewed data, Polynomial for non-linear relationships, Interaction for combined effects.",
+              placement: "right"
+            });
+            $("#custom_expr").tooltip({
+              title: "Enter a mathematical expression using \'x\' as the variable, e.g., log(x+1) or x^2/10",
+              placement: "right"
+            });
+            
+            // EDA tooltips
+            $("#plot_type").tooltip({
+              title: "Choose visualization type: Scatter for relationships, Histogram for distributions, PCA for dimensionality reduction, etc.",
+              placement: "right"
+            });
+            $("#select_all_eda").tooltip({
+              title: "Quickly select all columns for analysis. Uncheck to select specific columns.",
+              placement: "right"
+            });
+            
+            // Modeling tooltips
+            $("#train_ratio").tooltip({
+              title: "Choose how much data to use for training. Higher ratio means more training data, but less testing data.",
+              placement: "right"
+            });
+            $("#model_type").tooltip({
+              title: "Linear/Logistic Regression for simple relationships, Random Forest/Gradient Boosting for complex patterns.",
+              placement: "right"
+            });
+            $("#target_col").tooltip({
+              title: "Select the variable you want to predict.",
+              placement: "right"
+            });
+            $("#select_all_predictors").tooltip({
+              title: "Automatically select all columns except the target as predictors.",
+              placement: "right"
+            });
+          });
+        '))
       }
     )
   })
