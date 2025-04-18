@@ -388,12 +388,10 @@ server <- function(input, output, session) {
 
   # Set button styles based on group
   observe({
-    if (session_data$group == "A") {
+    if (session_data$group == "A" || session_data$group == "C") {
       session_data$button_style <- "background-color: #3498db; color: white;" # Original blue
     } else if (session_data$group == "B") {
       session_data$button_style <- "background-color: #e74c3c; color: white; font-size: 18px; padding: 10px 20px;" # Enhanced red
-    } else {
-      session_data$button_style <- "background-color: #2ecc71; color: white;" # Green for group C
     }
   })
 
